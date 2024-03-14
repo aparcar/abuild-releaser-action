@@ -71,6 +71,7 @@ EOF
   if "$add_top_level"; then
     echo "dir='$dir'" >> "$env"
   fi
+  cat "$env"
   if [ -f index.html ] && grep "ABUILD_RELEASER_ACTION_INDEX_TEMPLATE" index.html > /dev/null || [ ! -f index.html ]; then
     tpl -env @"$env" "$template" > index.html
   fi
